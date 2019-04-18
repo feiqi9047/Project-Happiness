@@ -1,6 +1,6 @@
 # Project Happiness
 
-What determines happiness? Can certain variables predict how happy a country is?
+What determines happiness? Can we predict how happy a country is?
 
 ## Data
 
