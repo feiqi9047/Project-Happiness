@@ -61,7 +61,7 @@ I wanted to see what the R<sup>2</sup> looks like with all of the original indep
 Multicollinearity was detected for GDP per Capita. However, given its high correlation with the dependent variable, I decided to keep it in the model. 
 <img width="806" alt="Screen Shot 2019-04-18 at 2 29 06 PM" src="https://user-images.githubusercontent.com/44821660/56382837-59e40980-61e6-11e9-9df5-ac6175e8b36e.png">
 
-### Checking for Interaction
+### Checking for Interactions
 
 Given all possible combinations of independent variables, I found that Social Support is a major confounding variable. I decided to split up Social Support into 3 categories: High Social Support Environment, Medium Social Support Environment, and Low Social Support Environment.
 <img width="729" alt="Screen Shot 2019-04-18 at 2 31 46 PM" src="https://user-images.githubusercontent.com/44821660/56383111-0b833a80-61e7-11e9-88a3-66245ab7fd49.png">
@@ -75,22 +75,29 @@ Given the above, I decided to include the two interactions in my model.
 ### Checking for Non-Linearity 
 
 Examining the relationships between Happiness Score and each independent variable more closely, there appearred to be a non-linear relationship between Happiness Score with Health/Life Expectancy and Perception of Corruption:
+
 <img width="792" alt="Screen Shot 2019-04-18 at 1 40 56 PM" src="https://user-images.githubusercontent.com/44821660/56380228-a11acc00-61df-11e9-87df-f8093d32604a.png">
+
 I then accounted for these non-linear relationships in the model using polynomial transformations.
 
 For Health/Life Expectancy, I tested its transformation to the powers of 2, 3, and 4:
+
 <img width="330" alt="Screen Shot 2019-04-18 at 2 39 14 PM" src="https://user-images.githubusercontent.com/44821660/56383572-1b4f4e80-61e8-11e9-919f-abbdab42080e.png">
 <img width="319" alt="Screen Shot 2019-04-18 at 2 42 46 PM" src="https://user-images.githubusercontent.com/44821660/56383625-489bfc80-61e8-11e9-97a8-b4b4f80b80d3.png">
+
 The best fitting line is the degree 2 transformation. Checking the residual distribution proved that such transformation is useable.
 
 Repeating the same steps for Perception of Corruption:
+
 <img width="316" alt="Screen Shot 2019-04-18 at 2 46 43 PM" src="https://user-images.githubusercontent.com/44821660/56383861-e55e9a00-61e8-11e9-9fc1-d8dd971d36cb.png">
 <img width="313" alt="Screen Shot 2019-04-18 at 2 47 15 PM" src="https://user-images.githubusercontent.com/44821660/56383866-e98ab780-61e8-11e9-9637-548f86c8e189.png">
+
 Although degree 3 seemed to be the best fitting line, the residuals for degree 2 showed more of a random distribution. I decided to include the degree 2 transformation in my model.
 
 ## What Does my Model Look Like?
 
 Inclusive of all the interaction terms and variable transformations, my OLS output showed a R<sup>2</sup> 0.86:
+
 <img width="360" alt="Screen Shot 2019-04-18 at 2 50 54 PM" src="https://user-images.githubusercontent.com/44821660/56384118-95cc9e00-61e9-11e9-9dce-099da1cbbf16.png">
 
 This is a slight improvement from my baseline model. However, this showed the presence of insignificant p-values and counterintuitive coefficients for my variables.
@@ -100,6 +107,7 @@ This is a slight improvement from my baseline model. However, this showed the pr
 After many iterations of including and dropping different variables, I needed to make a trade-off between generating the highest Adj. R<sup>2</sup> and generating reasonable coefficients. Hence, I dropped all variables with p-values > 0.05, variables where the coefficients were not explanatory, and those that are already included in the model as part of an interaction term or transformed variable (these included Generosity, Negative Emotions, Social Support, Perception of Corruption, Positive EMotions, Health/Life expectancy to the second degree, and Perception of Corruption to the second degree).
 
 The final model yielded a R<sup>2</sup> of 0.84 and an Adj. R<sup>2</sup> of 0.83:
+
 <img width="338" alt="Screen Shot 2019-04-18 at 3 01 09 PM" src="https://user-images.githubusercontent.com/44821660/56384612-d4af2380-61ea-11e9-970f-986321752af7.png">
 
 ## Interpreting the Model
@@ -117,6 +125,7 @@ In my multiple-regression model, ~83.7% of the variability in the Happiness Scor
 Since I do not have 2019 data, I cannot make predictions to approximate future happiness. However, I still wanted to test if my model is robust.
 
 Using the same variables from 2017 and 2016, I used my model to see the Actual Happiness Score and the "Predicted Happiness Score" for each country in those years. Then, I plotted out the Margin of Error between the Actual Happiness Scores and what my model "predicted". (Note that negative MOE indicates that I "underpredicted" the Happiness Score, where as positive MOE indicates that I "overpredicted" the Happiness Score):
+
 <img width="796" alt="Screen Shot 2019-04-18 at 3 23 16 PM" src="https://user-images.githubusercontent.com/44821660/56385712-f1992600-61ed-11e9-81a2-c493c52c2fa1.png">
 <img width="812" alt="Screen Shot 2019-04-18 at 3 23 26 PM" src="https://user-images.githubusercontent.com/44821660/56385728-f52cad00-61ed-11e9-94ec-e279679fab96.png">
 
