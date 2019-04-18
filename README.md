@@ -74,11 +74,11 @@ Given the above, I decided to include the two interactions in my model.
 
 ### Checking for Non-Linearity 
 
-Examining the relationships between Happiness Score and each independent variable more closely, there appearred to be a non-linear relationship between Happiness Score with Health/Life Expectancy and Perception of Corruption:
+Examining the relationships between Happiness Score and each independent variable more closely, there appeared to be non-linear relationships between Happiness Score with Health/Life Expectancy and Perception of Corruption:
 
 <img width="792" alt="Screen Shot 2019-04-18 at 1 40 56 PM" src="https://user-images.githubusercontent.com/44821660/56380228-a11acc00-61df-11e9-87df-f8093d32604a.png">
 
-I then accounted for these non-linear relationships in the model using polynomial transformations.
+I proceeded to account for these non-linear relationships in the model using polynomial transformations.
 
 For Health/Life Expectancy, I tested its transformation to the powers of 2, 3, and 4:
 
@@ -100,7 +100,7 @@ Inclusive of all the interaction terms and variable transformations, my OLS outp
 
 <img width="360" alt="Screen Shot 2019-04-18 at 2 50 54 PM" src="https://user-images.githubusercontent.com/44821660/56384118-95cc9e00-61e9-11e9-9dce-099da1cbbf16.png">
 
-This is a slight improvement from my baseline model. However, this showed the presence of insignificant p-values and counterintuitive coefficients for my variables.
+There is a slight improvement from my baseline model. However, this model showed the presence of insignificant p-values and counterintuitive coefficients for my variables.
 
 ## Training my Model
 
