@@ -81,8 +81,8 @@ Examining the relationships between Happiness Score and each independent variabl
 I proceeded to account for these non-linear relationships in the model using polynomial transformations.
 
 For Health/Life Expectancy, I tested its transformation to the powers of 2, 3, and 4:
+<img width="319" alt="Screen Shot 2019-04-19 at 5 20 02 PM" src="https://user-images.githubusercontent.com/44821660/56444629-7dcb4c00-62c7-11e9-95b3-a90e9fa5ab65.png">
 
-<img width="330" alt="Screen Shot 2019-04-18 at 2 39 14 PM" src="https://user-images.githubusercontent.com/44821660/56383572-1b4f4e80-61e8-11e9-919f-abbdab42080e.png">
 <img width="319" alt="Screen Shot 2019-04-18 at 2 42 46 PM" src="https://user-images.githubusercontent.com/44821660/56383625-489bfc80-61e8-11e9-97a8-b4b4f80b80d3.png">
 
 The best fitting line is the degree 2 transformation. Checking the residual distribution proved that such transformation is useable.
@@ -110,6 +110,25 @@ The final model yielded a R<sup>2</sup> of 0.84 and an Adj. R<sup>2</sup> of 0.8
 
 <img width="338" alt="Screen Shot 2019-04-18 at 3 01 09 PM" src="https://user-images.githubusercontent.com/44821660/56384612-d4af2380-61ea-11e9-970f-986321752af7.png">
 
+## Checking Residuals
+
+The residual vs. fitted plot shows that my residuals left over from my regression model do not have a non-linear pattern.
+
+<img width="417" alt="Screen Shot 2019-04-19 at 5 22 17 PM" src="https://user-images.githubusercontent.com/44821660/56444671-b3703500-62c7-11e9-8ddd-b27bf5379c4d.png">
+
+Although the QQ-plot of my residuals shows some deviation from normality, the deviations are not too severe to be alarming.
+
+<img width="407" alt="Screen Shot 2019-04-19 at 5 22 40 PM" src="https://user-images.githubusercontent.com/44821660/56444698-c2ef7e00-62c7-11e9-84d2-98ec45c9bede.png">
+
+The Scale-Location / Spread-Location plot shows that my residuals are spread equally along the ranges of predictors. This confirms the assumption of equal variance (homoscedasticity) as it shows a horizontal line with equally (randomly) spread points.
+
+<img width="415" alt="Screen Shot 2019-04-19 at 5 23 13 PM" src="https://user-images.githubusercontent.com/44821660/56444714-d7cc1180-62c7-11e9-9497-fe808eba84aa.png">
+
+The Leverage Plot shows that no values lie on the other side of Cook's Distance line (they all have low Cook’s distance scores), therefore outliers are not influential to the regression results. 
+
+<img width="410" alt="Screen Shot 2019-04-19 at 5 23 41 PM" src="https://user-images.githubusercontent.com/44821660/56444723-e9151e00-62c7-11e9-93a4-1534218d4b50.png">
+
+
 ## Interpreting the Model
 
 In my multiple-regression model, ~83.7% of the variability in the Happiness Score can be explained by the following variables:
@@ -120,7 +139,7 @@ In my multiple-regression model, ~83.7% of the variability in the Happiness Scor
 - Health and Life Expectancy in high Social Support environments increases Happiness Score by 5.01 than that in low Social Support environments
 - Perception of Corruption in high Social Support environments lowers Happiness Score by 3.64 than that in low Social Support environments (A possible explanation for this could be related to managing expectations. People in low social support countries tend to perceive their governments as more corrupt, and vice versa. It is possible that their low expectations and general distrust in the government prevented as dramatic of a decrease in their overall happiness as compared to those in high social support environments)
 
-### Validating my Model
+## Validating my Model
 
 Since I do not have 2019 data, I cannot make predictions to approximate future happiness. However, I still wanted to test if my model is robust.
 
