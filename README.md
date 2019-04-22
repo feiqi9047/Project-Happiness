@@ -143,9 +143,16 @@ In my multiple-regression model, ~83.7% of the variability in the Happiness Scor
 
 Since I do not have 2019 data, I cannot make predictions to approximate future happiness. However, I still wanted to test if my model is robust.
 
-Using the same variables from 2017 and 2016, I used my model to see the Actual Happiness Score and the "Predicted Happiness Score" for each country in those years. Then, I plotted out the Margin of Error between the Actual Happiness Scores and what my model "predicted". (Note that negative MOE indicates that I "underpredicted" the Happiness Score, where as positive MOE indicates that I "overpredicted" the Happiness Score):
+Using the same variables from 2017 and 2016, I used my model to see the Actual Happiness Score and the "Predicted Happiness Score" for each country in those years. Then, I plotted out the Margin of Error between the Actual Happiness Scores and what my model "predicted". (Note that negative MOE indicates that I "underpredicted" the Happiness Score, where as positive MOE indicates that I "overpredicted" the Happiness Score).
 
+For 2017:
+
+<img width="540" alt="Screen Shot 2019-04-22 at 4 24 44 PM" src="https://user-images.githubusercontent.com/44821660/56527156-3b01b200-651b-11e9-9089-d6ce2187ecef.png">
 <img width="796" alt="Screen Shot 2019-04-18 at 3 23 16 PM" src="https://user-images.githubusercontent.com/44821660/56385712-f1992600-61ed-11e9-81a2-c493c52c2fa1.png">
+
+For 2016:
+
+<img width="520" alt="Screen Shot 2019-04-22 at 4 25 03 PM" src="https://user-images.githubusercontent.com/44821660/56527233-566cbd00-651b-11e9-936b-4afacfddcdaa.png">
 <img width="812" alt="Screen Shot 2019-04-18 at 3 23 26 PM" src="https://user-images.githubusercontent.com/44821660/56385728-f52cad00-61ed-11e9-94ec-e279679fab96.png">
 
 An interesting observation here is that countries with the least political stability, weakest economy, and lowest level of development tend to have the highest positive MOE. Whereas more developed countries tend to exhibit less variability in their Happiness Scores over 2016-2018.
